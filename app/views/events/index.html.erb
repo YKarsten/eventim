@@ -1,0 +1,11 @@
+<h1> Finde Events in deiner Nähe - eventim </h1>
+
+<div>
+    <%if @events.empty? %>
+        <%= 'Es sind keine Events registriert.'%>
+  <% else %>
+    <%= render partial: "events/event", collection: @events, locals: {show_join: true} %>
+  <% end %>
+</div>
+
+<h4><%= link_to "Create a New Event!", new_event_path %></h4>
